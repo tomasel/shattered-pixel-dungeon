@@ -495,7 +495,7 @@ public abstract class Char extends Actor {
 			return true;
 		}
 
-		float acuRoll = Random.Float( acuStat );
+		float acuRoll = 1f + Random.Float( acuStat );
 		if (attacker.buff(Bless.class) != null) acuRoll *= 1.25f;
 		if (attacker.buff(  Hex.class) != null) acuRoll *= 0.8f;
 		for (ChampionEnemy buff : attacker.buffs(ChampionEnemy.class)){
@@ -503,7 +503,7 @@ public abstract class Char extends Actor {
 		}
 		acuRoll *= AscensionChallenge.statModifier(attacker);
 		
-		float defRoll = Random.Float( defStat );
+		float defRoll = 1f + Random.Float( defStat );
 		if (defender.buff(Bless.class) != null) defRoll *= 1.25f;
 		if (defender.buff(  Hex.class) != null) defRoll *= 0.8f;
 		for (ChampionEnemy buff : defender.buffs(ChampionEnemy.class)){
